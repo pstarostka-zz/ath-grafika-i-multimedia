@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 				break;
 			case "PickUpVariant":
 				other.gameObject.SetActive (false);
-				count += 3;
+				count += 2;
 				SetCountText();
 				break;
 			default:
@@ -45,8 +45,9 @@ public class PlayerController : MonoBehaviour {
 
 	void SetCountText() {
 		countText.text = "Points: " + count.ToString();
-		if (count >= 17) {
+		if (count >= 10) {
 			winText.text = "YOU WIN!";
+			Time.timeScale = 0f;
 		}
 	}
 }
